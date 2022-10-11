@@ -1,0 +1,11 @@
+Document: libjcommon-java-doc
+Title: Programmer API for the JCommon
+Author: David Gilbert (david.gilbert@object-refinery.com)
+Abstract: This is the programmer API of JCommon is a free general purpose
+ Java class library that is used in several projects including JFreeChart
+ and JFreeReport.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/libjcommon-java/javadoc/index.html
+Files: /usr/share/doc/libjcommon-java/javadoc/*.html

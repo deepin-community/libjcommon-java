@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+export JAVA_HOME=/usr/lib/jvm/default-java
+export CLASSPATH=/usr/share/java/junit.jar:/usr/share/java/servlet-api-3.1.jar
+VERSION:=1.0.23
+
+%:
+	dh $@ --with maven_repo_helper --buildsystem=ant
+
+override_dh_auto_build:
+	ant -f ant/build.xml compile compile-xml javadoc
+	bnd wrap --properties debian/jcommon.bnd --output debian/jcommon-$(VERSION).jar \
+		jcommon-$(VERSION).jar
+
+override_dh_auto_clean:
+	$(RM) *.jar
+	$(RM) lib/*.jar
+	$(RM) debian/*.jar
+	$(RM) -r build javadoc
+
+override_dh_link:
+	dh_link -plibjcommon-java /usr/share/java/jcommon-xml-$(VERSION).jar /usr/share/java/jcommon-xml.jar
+
+get-orig-pom:
+	mkdir -p debian/poms
+	wget  -U NoSuchBrowser/1.0 -O debian/poms/jcommon.pom \
+		https://oss.sonatype.org/content/repositories/releases/org/jfree/jcommon/$(VERSION)/jcommon-$(VERSION).pom
+

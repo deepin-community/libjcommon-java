@@ -1,0 +1,5 @@
+Bundle-Name: General Purpose library for Java
+Bundle-SymbolicName: org.jfree
+Bundle-Version: 1.0.0
+Bundle-Vendor: Debian.org
+Import-Package: *

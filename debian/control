@@ -1,0 +1,52 @@
+Source: libjcommon-java
+Section: java
+Priority: optional
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Christian Bayle <bayle@debian.org>,
+ Rene Engelhard <rene@debian.org>,
+ Jakub Adam <jakub.adam@ktknet.cz>
+Build-Depends:
+ ant,
+ bnd (>= 2.1.0),
+ debhelper-compat (= 13),
+ default-jdk,
+ junit,
+ libservlet3.1-java,
+ maven-repo-helper
+Standards-Version: 4.5.0
+Vcs-Git: https://salsa.debian.org/java-team/libjcommon-java.git
+Vcs-Browser: https://salsa.debian.org/java-team/libjcommon-java
+Homepage: http://www.jfree.org/jcommon/
+
+Package: libjcommon-java
+Architecture: all
+Depends:
+ ${misc:Depends}
+Suggests:
+ libjcommon-java-doc
+Description: General Purpose library for Java
+ JCommon is a free general purpose Java class library that is used in
+ several projects at The Object Refinery, including JFreeChart and
+ JFreeReport.
+ .
+ The library includes:
+  * user interface classes for displaying information about applications
+  * custom layout managers
+  * a date chooser panel
+  * serialization utilities
+  * XML parser support classes
+
+Package: libjcommon-java-doc
+Section: doc
+Architecture: all
+Depends:
+ ${misc:Depends}
+Suggests:
+ libjcommon-java
+Description: General Purpose library for Java - documentation
+ JCommon is a free general purpose Java class library that is used in
+ several projects at The Object Refinery, including JFreeChart and
+ JFreeReport.
+ .
+ This package includes the documentation.

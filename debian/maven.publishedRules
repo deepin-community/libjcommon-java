@@ -1,0 +1,1 @@
+s/jfree/org.jfree/ jcommon * s/.*/debian/

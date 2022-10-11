@@ -1,0 +1,20 @@
+From: Markus Koschany <apo@debian.org>
+Date: Fri, 14 Oct 2016 23:38:28 +0200
+Subject: javaDocLink
+
+---
+ ant/build.xml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/ant/build.xml b/ant/build.xml
+index 56a38b9..7c2cbce 100644
+--- a/ant/build.xml
++++ b/ant/build.xml
+@@ -143,6 +143,7 @@
+       windowtitle="JCommon Class Library (version ${jcommon.version})"
+       overview="src/main/java/overview.html"
+       linksource="true">
++      <link href="/usr/share/doc/default-jdk-doc/api/" />
+       <classpath refid="build-xml.classpath"/>
+       <packageset dir="src/main/java" defaultexcludes="yes">
+         <include name="org/jfree"/>
